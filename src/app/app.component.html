@@ -1,0 +1,38 @@
+
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+
+        <h1>{{ title }}</h1>
+
+        <label>Name
+          <input type="text" formControlName="name">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+
+
+        <label>Description
+          <textarea formControlName="description"></textarea>
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">{{ messageName }}</div>
+
+
+        <label for="validate">{{ messageInfo }}</label>
+        <input type="checkbox" name="validate" formControlName="validate" (click)="changeValue(rForm)" value="true"> On
+
+        <input type="submit" class="button expanded" value="Send" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+        <h1>{{ name }}</h1>
+
+        <p>{{ description }}</p>
+    </div>
+  </div>
+</ng-template>
