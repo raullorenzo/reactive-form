@@ -6,5 +6,5 @@ export const GLOBAL = {
     messageCheckBox: 'On',
     messageInfo: 'Minimum of 3 Characters',
     titleAlertPhone: 'Invalid phone!',
-    titleAlertEmail: 'Invalid mail!'
+    titleAlertEmail: 'Invalid email!'
 };

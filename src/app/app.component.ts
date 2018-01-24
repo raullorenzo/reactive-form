@@ -69,7 +69,6 @@ export class AppComponent implements OnInit {
         console.log(<any>error);
       }
     );
-    this.rForm.reset();
   }
 
   changeValue(value) {
@@ -84,4 +83,8 @@ export class AppComponent implements OnInit {
     this.email = post.email;
   }
 
+  returnForm(form) {
+    this.name = null;
+    form.reset();
+  }
 }
