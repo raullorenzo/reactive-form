@@ -10,17 +10,21 @@
           <input type="text" formControlName="name">
         </label>
         <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+        
+        <label>Phone
+          <input type="text" formControlName="phone">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['phone'].valid && rForm.controls['phone'].touched">{{ titleAlertPhone }}</div>
 
         <label>Email
           <input type="email" formControlName="email">
         </label>
-        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">Email no válido!</div>
+        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">{{ titleAlertEmail }}</div>
 
         <label>Description
           <textarea formControlName="description"></textarea>
         </label>
         <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">{{ messageName }}</div>
-
 
         <label for="validate">{{ messageInfo }}</label>
         <input type="checkbox" name="validate" formControlName="validate" (click)="changeValue(rForm)" value="true"> On
@@ -36,6 +40,9 @@
     <div class="row columns">
         <h3><strong>Name:</strong></h3>
         <p>{{ name }}</p>
+
+        <h3><strong>Phone:</strong></h3>
+        <p>{{ phone }}</p>
 
         <h3><strong>Email:</strong></h3>
         <p>{{ email }}</p>

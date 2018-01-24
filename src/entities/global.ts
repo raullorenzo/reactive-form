@@ -4,5 +4,7 @@ export const GLOBAL = {
     titleAlertRequired: 'This field is required',
     messageDescription: 'You must specify a description that\'s between 5 and 10 characters',
     messageCheckBox: 'On',
-    messageInfo: 'Minimum of 3 Characters'
+    messageInfo: 'Minimum of 3 Characters',
+    titleAlertPhone: 'Invalid phone!',
+    titleAlertEmail: 'Invalid mail!'
 };
