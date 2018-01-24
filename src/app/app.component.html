@@ -11,6 +11,10 @@
         </label>
         <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
 
+        <label>Email
+          <input type="email" formControlName="email">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['email'].valid && rForm.controls['email'].touched">Email no válido!</div>
 
         <label>Description
           <textarea formControlName="description"></textarea>
@@ -30,8 +34,13 @@
 <ng-template #forminfo>
   <div class="form-container">
     <div class="row columns">
-        <h1>{{ name }}</h1>
+        <h3><strong>Name:</strong></h3>
+        <p>{{ name }}</p>
 
+        <h3><strong>Email:</strong></h3>
+        <p>{{ email }}</p>
+
+        <h3><strong>Description:</strong></h3>
         <p>{{ description }}</p>
     </div>
   </div>

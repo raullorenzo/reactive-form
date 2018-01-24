@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   public post: any;
   public description: string;
   public name: string;
+  public email: string;
   public titleAlert: string;
   public messageName: string;
   public messageCheckBox: string;
@@ -26,6 +27,7 @@ export class AppComponent implements OnInit {
     this.title = GLOBAL.title;
     this.description  = '';
     this.name = '';
+    this.email = '';
     this.titleAlert = GLOBAL.titleAlertRequired;
     this.messageName = GLOBAL.messageDescription;
     this.messageCheckBox = GLOBAL.messageCheckBox;
@@ -33,7 +35,10 @@ export class AppComponent implements OnInit {
 
     this.rForm = fb.group({
       'name': [null, Validators.required],
-      'description': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
+      'email': [null, [Validators.required,
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      'description': [null, Validators.compose([Validators.required,
+        Validators.minLength(5), Validators.maxLength(10)])],
       'validate' : false
     });
 
@@ -71,6 +76,7 @@ export class AppComponent implements OnInit {
   addPost(post) {
     this.description = post.description;
     this.name = post.name;
+    this.email = post.email;
   }
 
 }
